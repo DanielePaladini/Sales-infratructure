@@ -13,8 +13,8 @@ resource "aws_security_group" "webserver-security-group" {
 
   ingress {
     description = "http"
-    from_port = 80
-    to_port = 80
+    from_port = 8080
+    to_port = 8080
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -40,6 +40,7 @@ resource "aws_instance" "webserver" {
   security_groups = [aws_security_group.webserver-security-group.id]
 
   user_data = data.template_file.user-data.rendered
+  iam_instance_profile = aws_iam_instance_profile.ec2-profile.id
 }
 
 data "template_file" "user-data" {
