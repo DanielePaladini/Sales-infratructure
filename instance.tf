@@ -41,6 +41,10 @@ resource "aws_instance" "webserver" {
 
   user_data = data.template_file.user-data.rendered
   iam_instance_profile = aws_iam_instance_profile.ec2-profile.id
+
+  tags = {
+    Name = "Sales"
+  }
 }
 
 data "template_file" "user-data" {
