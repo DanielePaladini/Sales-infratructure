@@ -17,3 +17,6 @@ sudo ./install auto
 sudo service codedeploy-agent start
 
 sudo rm ./install
+
+################# Elastic IP association
+aws ec2 associate-address --public-ip ${EPID} --region ${REGION} --instance-id $(curl http://169.254.169.254/latest/meta-data/instance-id)
