@@ -31,7 +31,7 @@ resource "aws_codepipeline" "codepipeline" {
 
       configuration = {
         Owner  = "DanielePaladini"
-        Repo   = "sale-taxes"
+        Repo   = "Sales"
         Branch = "master"
         OAuthToken = data.aws_ssm_parameter.github-token.value
       }
