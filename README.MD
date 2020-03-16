@@ -4,7 +4,7 @@ This infrastructure stack is used for the deployment of the Sales application. T
 
 The infrastructure consists of:
 
- - an **EC2** launched within an **AutoscalignGroup** com min and max capacity set to 1 to ensure resilience. 
+ - an **EC2** launched within an **AutoscalignGroup** with min and max capacity set to 1 to ensure resilience. 
  - An **ElasticIP** to maintain a static ip reachable from the outside. Each time an instance is launched, the machine assigns itself the ElasticIP.
  - A **CodePipeline** to ensure CI/CD. Composed by 3 stages (**Source**, **CodeBuild**, **CodeDeploy**). 
   Each time a push is made into Sales application code repository the pipeline is triggered. It clones the code, performs unit tests, builds the code, deploys and run the package into the EC2. The CodeDeploy component is automatically started even when the autoscalingGroup starts a new EC2.
