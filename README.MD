@@ -24,13 +24,15 @@ The infrastructure consists of:
 
 ## Deployment
 
- Deployment of EC2 stack:
+ Deployment of EC2 stack
+ 
  in root directory project:
 
     terraform init
     terraform apply --auto-approve
 
-deployment of Codepipeline stack:
+Deployment of Codepipeline stack
+
 in codepiepeline directory:
 
     terraform init
