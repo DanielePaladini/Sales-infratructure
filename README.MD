@@ -12,7 +12,7 @@ The infrastructure consists of:
 
 
 # Overview
-![enter image description here](images/Sales Architecture.png)
+![enter image description here](images/Web App Reference Architecture.png)
 
 
 ## Requirements
